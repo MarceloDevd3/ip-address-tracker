@@ -1,0 +1,295 @@
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+
+.leaflet-marker-icon {
+  width: 25px;
+  height: 41px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+* body {
+  font-size: 1.125em;
+  font-family: "Rubik", sans-serif;
+}
+* button {
+  cursor: pointer;
+}
+
+main {
+  position: relative;
+}
+
+.painel {
+  background: url(../images/pattern-bg-mobile.png) no-repeat;
+  background-size: cover;
+  height: 250px;
+}
+.painel .top-painel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 84%;
+  padding: 0.7em 0;
+}
+.painel .top-painel .Painel--title {
+  color: #fff;
+  margin: 0.9em 0;
+  text-transform: capitalize;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+.painel .top-painel form {
+  display: flex;
+}
+.painel .top-painel form input {
+  width: 100%;
+  height: 50px;
+  padding-left: 22px;
+  border: none;
+  outline: none;
+  border-radius: 10px 0 0 10px;
+}
+.painel .top-painel form input::placeholder {
+  font-size: 0.5em;
+}
+.painel .top-painel form .btn-black {
+  width: 51px;
+  height: 52px;
+  margin-top: -1px;
+  margin-left: -25px;
+  border-radius: 0 10px 10px 0;
+  border: none;
+  background-color: black;
+}
+.painel .top-painel form .btn-black:hover {
+  background: hsl(0, 1%, 41%);
+  transition: ease-in background 0.5s;
+}
+.painel .top-painel form .btn-black:active {
+  background: hsl(0, 1%, 30%);
+  transition: ease-in background 0.5s;
+}
+.painel #Painel--information-zone {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  top: 2%;
+  background-color: #fff;
+  left: 6%;
+  border-radius: 15px;
+  padding: 1em;
+  width: 271px;
+  height: 300px;
+  z-index: 2000;
+}
+.painel .info {
+  padding: 0.1em 0;
+}
+.painel .info h2 {
+  color: hsl(0, 0%, 59%);
+  text-transform: uppercase;
+  padding: 0.5em 0;
+}
+.painel .info .data {
+  font-weight: 500;
+  color: hsl(0, 0%, 17%);
+}
+
+.map {
+  z-index: 1;
+}
+
+@media (min-width: 500px) {
+  .painel .top-painel {
+    width: 100%;
+    padding: 0.7em 0;
+  }
+  .painel .top-painel .Painel--title {
+    color: #fff;
+    margin: 0.9em 0;
+    text-transform: capitalize;
+    font-size: 1.2em;
+    font-weight: 400;
+  }
+  .painel .top-painel form {
+    display: flex;
+  }
+  .painel .top-painel form input {
+    width: 350px;
+    height: 55px;
+  }
+  .painel .top-painel form input::placeholder {
+    font-size: 0.7em;
+  }
+  .painel .top-painel form .btn-black {
+    height: 57px;
+  }
+  .painel #Painel--information-zone {
+    top: 10%;
+    left: 12%;
+    width: 375px;
+    height: 300px;
+    z-index: 2000;
+  }
+}
+@media (min-width: 1024px) {
+  .painel {
+    background: url(../images/pattern-bg-desktop.png) no-repeat;
+    background-size: cover;
+    height: 300px;
+  }
+  .painel .top-painel {
+    padding: 0.7em 0;
+  }
+  .painel .top-painel .Painel--title {
+    font-size: 1.7em;
+    color: #fff;
+    margin: 1em 0;
+  }
+  .painel .top-painel form {
+    display: flex;
+  }
+  .painel .top-painel form input {
+    width: 550px;
+    height: 60px;
+  }
+  .painel .top-painel form input::placeholder {
+    font-size: 1em;
+  }
+  .painel .top-painel form .btn-black {
+    height: 61px;
+  }
+  .painel #Painel--information-zone {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    top: 13%;
+    background-color: #fff;
+    left: 12%;
+    border-radius: 25px;
+    padding: 1em 2em;
+    width: 800px;
+    height: 230px;
+    z-index: 2000;
+  }
+  .painel #Painel--information-zone .info {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    height: 125px;
+    margin: 0 0.5em;
+  }
+  .painel #Painel--information-zone .line {
+    display: flex;
+  }
+  .painel #Painel--information-zone .line .dd {
+    flex-direction: row;
+    align-self: center;
+    height: 85px;
+    opacity: 0.5;
+    width: 2px;
+    margin-left: 25px;
+    background-color: hsl(0, 0%, 59%);
+  }
+  .painel #Painel--information-zone .Ip-address, .painel #Painel--information-zone .location, .painel #Painel--information-zone .TimeZone, .painel #Painel--information-zone .Isp {
+    letter-spacing: 2px;
+    font-size: 0.7em;
+    font-weight: 500;
+  }
+  .painel #Painel--information-zone .data {
+    margin-top: 0.4em;
+    font-size: 1.4em;
+    font-weight: 500;
+  }
+  .leaflet-container {
+    width: 100%;
+    height: 55vh;
+  }
+}
+@media (min-width: 1336px) {
+  .painel .top-painel {
+    width: 100%;
+  }
+  .painel #Painel--information-zone {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    top: 12%;
+    background-color: #fff;
+    left: 17%;
+    border-radius: 25px;
+    padding: 1em 2em;
+    width: 900px;
+    height: 230px;
+    z-index: 2000;
+  }
+  .painel #Painel--information-zone .info {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    height: 125px;
+    margin: 0 0.5em;
+  }
+  .painel #Painel--information-zone .line {
+    display: flex;
+  }
+  .painel #Painel--information-zone .line .dd {
+    flex-direction: row;
+    align-self: center;
+    height: 85px;
+    opacity: 0.5;
+    width: 2px;
+    margin-left: 25px;
+    background-color: hsl(0, 0%, 59%);
+  }
+  .painel #Painel--information-zone .Ip-address, .painel #Painel--information-zone .location, .painel #Painel--information-zone .TimeZone, .painel #Painel--information-zone .Isp {
+    letter-spacing: 2px;
+    font-size: 0.7em;
+    font-weight: 500;
+  }
+  .painel #Painel--information-zone .data {
+    margin-top: 0.4em;
+    font-size: 1.4em;
+    font-weight: 500;
+  }
+}
+@media (min-width: 1440px) {
+  .painel {
+    height: 400px;
+  }
+  .painel .top-painel {
+    padding: 1.2em 0;
+  }
+  .painel .top-painel .Painel--title {
+    font-size: 2.7em;
+    color: #fff;
+    margin: 1em 0;
+  }
+  .painel #Painel--information-zone {
+    left: 17%;
+    top: 12%;
+  }
+  .leaflet-container {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+/*# sourceMappingURL=style.min.css.map */
