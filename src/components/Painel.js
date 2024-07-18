@@ -3,7 +3,7 @@ import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
 import L, { Icon } from 'leaflet';
 import "leaflet/dist/leaflet.css";
 import markerIconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
-import markerIconUrl from 'leaflet/dist/images/marker-icon.png';
+import markerIconUrl from 'leaflet/dist/images/icon-location.png';
 import markerShadowUrl from 'leaflet/dist/images/marker-shadow.png';
 import axios from "axios";
 import arrow from './images/icon-arrow.svg';
