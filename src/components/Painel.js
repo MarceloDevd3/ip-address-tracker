@@ -1,15 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
-import L from 'leaflet';
-import iconLocation from 'leaflet/dist/images/icon-location.png';
+import L, { Icon } from 'leaflet';
 import "leaflet/dist/leaflet.css";
-import { Icon } from 'leaflet';
+import markerIconRetinaUrl from 'leaflet/dist/images/marker-icon-2x.png';
+import markerIconUrl from 'leaflet/dist/images/marker-icon.png';
+import markerShadowUrl from 'leaflet/dist/images/marker-shadow.png';
 import axios from "axios";
 import arrow from './images/icon-arrow.svg';
 
 export default function Painel() {
 
-  L.Icon.Default.imagePath = iconLocation;
+  const customIcon = new Icon({
+    iconRetinaUrl: markerIconRetinaUrl,
+    iconUrl: markerIconUrl,
+    shadowUrl: markerShadowUrl,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41],
+  });
 
   const [painelInfo, setPainelInfo] = useState({
     CurrentIpAddress: "192.212.174.101",
@@ -137,13 +146,7 @@ export default function Painel() {
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <Marker position={[locationCode.lt, locationCode.lg]} icon={new Icon({
-            iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
-            iconUrl: require("leaflet/dist/images/icon-location.png"),
-          })
-          }
-          >
-          </Marker>
+          <Marker position={[locationCode.lt, locationCode.lg]} icon={customIcon} />
         </MapContainer>
       </div>
     </main>
