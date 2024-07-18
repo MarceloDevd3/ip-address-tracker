@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, useMap } from 'react-leaflet';
+import L from 'leaflet';
+import iconLocation from 'leaflet/dist/images/icon-location.png';
 import "leaflet/dist/leaflet.css";
 import { Icon } from 'leaflet';
 import axios from "axios";
 import arrow from './images/icon-arrow.svg';
 
 export default function Painel() {
+
+  L.Icon.Default.imagePath = iconLocation;
 
   const [painelInfo, setPainelInfo] = useState({
     CurrentIpAddress: "192.212.174.101",
@@ -56,8 +60,6 @@ export default function Painel() {
   function subForm(e) {
     e.preventDefault()
   }
-
-  
 
 
   const UpdateMap = () => {
